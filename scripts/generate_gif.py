@@ -16,7 +16,7 @@ font_title = ImageFont.truetype(FONT_PATH, 25)
 font_mono = ImageFont.truetype(FONT_PATH, 11)
 font_small = ImageFont.truetype(FONT_PATH, 10)
 
-# Full physical kinematics: Both blades AND handles move synchronously
+# Heavy Jinki tailor shears kinematics: straight handles and full blade mass
 FRAME_OPEN = [
     r"       \                   /       ",
     r"       |\                 /|       ",
@@ -31,7 +31,7 @@ FRAME_OPEN = [
     r"              \-(X)-/              ",
     r"              /     \              ",
     r"             /       \             ",
-    r"           /           \           ",
+    r"            /         \            ",
     r"        ( O )         ( O )        ",
     r"         \_/           \_/         ",
 ]
@@ -93,24 +93,7 @@ FRAME_SPARKS = [
     r"             \_/  \_/              ",
 ]
 
-FRAME_RECOIL = [
-    r"                                   ",
-    r"         \               /         ",
-    r"         |\             /|         ",
-    r"         | \           / |         ",
-    r"          \ \         / /          ",
-    r"           \ \       / /           ",
-    r"            \ \     / /            ",
-    r"             \ \   / /             ",
-    r"              \ \ / /              ",
-    r"               \ | /               ",
-    r"              \-(X)-/              ",
-    r"              / / \ \              ",
-    r"             / /   \ \             ",
-    r"            / /     \ \            ",
-    r"          ( O )     ( O )          ",
-    r"           \_/       \_/           ",
-]
+FRAME_RECOIL = FRAME_CLOSING
 
 # Deliberate, realistic mechanical rhythm:
 ANIM_SEQUENCE = [
@@ -188,6 +171,9 @@ for idx, (lines, dur) in enumerate(ANIM_SEQUENCE):
 out_gif = os.path.join(os.path.dirname(os.path.dirname(__file__)), "assets", "cleaner-scissors.gif")
 images[0].save(out_gif, save_all=True, append_images=images[1:], duration=durations, loop=0)
 
+out_gif_shears = os.path.join(os.path.dirname(os.path.dirname(__file__)), "assets", "cleaner-shears.gif")
+images[0].save(out_gif_shears, save_all=True, append_images=images[1:], duration=durations, loop=0)
+
 out_gif2 = os.path.join(os.path.dirname(os.path.dirname(__file__)), "assets", "riyo-scissors.gif")
 images[0].save(out_gif2, save_all=True, append_images=images[1:], duration=durations, loop=0)
 
@@ -197,4 +183,4 @@ images[0].save(out_gif3, save_all=True, append_images=images[1:], duration=durat
 out_gif4 = os.path.join(os.path.dirname(os.path.dirname(__file__)), "assets", "banner.gif")
 images[0].save(out_gif4, save_all=True, append_images=images[1:], duration=durations, loop=0)
 
-print(f"Generated realistic kinematic scissors GIF at {out_gif}")
+print(f"Generated realistic kinematic scissors GIF at {out_gif} and {out_gif_shears}")
