@@ -1,6 +1,17 @@
 <div align="center">
 
-<img src="./assets/riyo-banner.svg" alt="RIYO // THE CLEANERS" width="100%">
+<a href="https://t.me/gachi_riyo">
+  <img src="./assets/riyo-banner.gif" alt="RIYO // THE CLEANERS" width="100%">
+</a>
+
+<p align="center">
+  <a href="https://t.me/gachi_riyo">
+    <img src="https://img.shields.io/badge/TELEGRAM-@gachi__riyo-10121a?style=for-the-badge&logo=telegram&logoColor=26A5E4&borderColor=ff0033" />
+  </a>
+  <a href="mailto:gachi.riyo@gmail.com">
+    <img src="https://img.shields.io/badge/EMAIL-gachi.riyo@gmail.com-10121a?style=for-the-badge&logo=gmail&logoColor=EA4335&borderColor=ff0033" />
+  </a>
+</p>
 
 </div>
 
@@ -10,8 +21,9 @@
 
 ```text
 OPERATIVE  : Riyo (Reei-dp)
-ROLE       : Full-Stack Engineer // Automations & Systems
-AFFILIATION: The Cleaners (掃除屋)
+CLASS      : Giver (通) // Full-Stack Engineer
+JINKI      : The Ripper (切り裂き魔)
+FOCUS      : High-Load Bot Architectures, Microservices & Scalable APIs
 STATUS     : Active in the Pit
 ```
 
@@ -19,13 +31,13 @@ STATUS     : Active in the Pit
 
 ### [ ARSENAL ]
 
-```text
-LANGUAGES  : Go, Python, TypeScript, Shell
-WEB & APIS : Gin, FastAPI, React, Next.js, AsyncIO
-STORAGE    : PostgreSQL, Redis
-SYSTEMS    : Docker, Linux, Git, Reverse Engineering
-AUTOMATION : Telegram Bot Architecture, High-load Pipelines
-```
+| DOMAIN | TECHNOLOGIES |
+| :--- | :--- |
+| **LANGUAGES** | `Go` • `Python` • `TypeScript` • `JavaScript` • `C/C++` • `Shell` |
+| **BACKEND & APIS** | `FastAPI` • `Gin` • `AsyncIO` • `REST` • `WebSocket` |
+| **FRONTEND & UI** | `React` • `Next.js` • `HTML5 / CSS3` • `Tailwind` |
+| **SYSTEMS & INFRA** | `Docker` • `Linux Kernel` • `PostgreSQL` • `Redis` • `Git` |
+| **AUTOMATION** | `Telegram Bot Architecture` • `Telethon / Pyrogram` • `Reverse Engineering` |
 
 ---
 
@@ -42,7 +54,7 @@ AUTOMATION : Telegram Bot Architecture, High-load Pipelines
 ### [ FREQUENCY ]
 
 ```text
-MAIL     : gachi.riyo@gmail.com
-GITHUB   : github.com/Reei-dp
-TELEGRAM : @your_telegram
+TELEGRAM : https://t.me/gachi_riyo
+EMAIL    : gachi.riyo@gmail.com
+GITHUB   : https://github.com/Reei-dp
 ```
