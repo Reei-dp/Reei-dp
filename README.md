@@ -17,18 +17,6 @@
 
 ---
 
-### [ DOSSIER ]
-
-```text
-OPERATIVE  : Riyo (Reei-dp)
-CLASS      : Giver (通) // Full-Stack Engineer
-JINKI      : The Ripper (切り裂き魔)
-FOCUS      : High-Load Bot Architectures, Microservices & Scalable APIs
-STATUS     : Active in the Pit
-```
-
----
-
 ### [ ARSENAL ]
 
 | DOMAIN | TECHNOLOGIES |
