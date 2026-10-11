@@ -35,7 +35,6 @@ def fetch_stats():
         with urllib.request.urlopen(req) as resp:
             data = json.loads(resp.read().decode("utf-8"))["data"]["user"]
     else:
-        # Fallback to local gh CLI if token not directly in env
         cmd = ["gh", "api", "graphql", "-f", f"query={query}"]
         out = subprocess.check_output(cmd).decode("utf-8")
         data = json.loads(out)["data"]["user"]
@@ -53,68 +52,61 @@ def fetch_stats():
     }
 
 def generate_svg(stats, output_path):
-    svg_content = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 190" width="100%" height="100%">
+    svg_content = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 140" width="100%" height="100%">
   <defs>
-    <linearGradient id="stats-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0a0b11" />
-      <stop offset="50%" stop-color="#12131d" />
-      <stop offset="100%" stop-color="#08090d" />
-    </linearGradient>
-    <pattern id="stat-grid" width="15" height="15" patternUnits="userSpaceOnUse">
-      <path d="M 15 0 L 0 0 0 15" fill="none" stroke="#ffffff" stroke-opacity="0.02" stroke-width="1" />
+    <pattern id="stat-tone" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="0.8" fill="#ffffff" fill-opacity="0.04" />
     </pattern>
   </defs>
 
   <style>
-    .header-text {{ font-family: 'Courier New', monospace; font-size: 11px; font-weight: bold; fill: #ff0055; letter-spacing: 1px; }}
-    .metric-value {{ font-family: 'Courier New', 'Fira Code', monospace; font-size: 26px; font-weight: 900; }}
-    .metric-label {{ font-family: 'Segoe UI', -apple-system, sans-serif; font-size: 11px; fill: #7e8597; text-transform: uppercase; letter-spacing: 0.5px; }}
-    .sub-note {{ font-family: 'Courier New', monospace; font-size: 10px; fill: #00f5d4; }}
+    .val {{ font-family: -apple-system, BlinkMacSystemFont, 'Impact', 'Arial Black', monospace; font-size: 32px; font-weight: 900; }}
+    .lbl {{ font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 10px; font-weight: bold; letter-spacing: 1.5px; fill: #63687a; text-transform: uppercase; }}
+    .tag {{ font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #ff0033; font-weight: bold; }}
   </style>
 
-  <!-- Background -->
-  <rect width="850" height="190" fill="url(#stats-bg)" rx="8" stroke="#232636" stroke-width="1.2" />
-  <rect width="850" height="190" fill="url(#stat-grid)" rx="8" />
+  <!-- Dark Background -->
+  <rect width="850" height="140" fill="#070709" />
+  <rect width="850" height="140" fill="url(#stat-tone)" />
 
-  <!-- Top bar -->
-  <rect x="0" y="0" width="850" height="26" fill="#141624" rx="8" />
-  <circle cx="16" cy="13" r="4" fill="#ff0055" />
-  <circle cx="28" cy="13" r="4" fill="#ffbe0b" />
-  <circle cx="40" cy="13" r="4" fill="#00f5d4" />
-  <text x="58" y="17" class="header-text">✂ REEI-DP // METRICS OVERVIEW [THE PIT PROTOCOL]</text>
-  <text x="730" y="17" font-family="'Courier New', monospace" font-size="10" fill="#00f5d4" font-weight="bold">[SYNCED]</text>
+  <!-- Borders -->
+  <rect x="18" y="14" width="814" height="112" fill="none" stroke="#1f2029" stroke-width="1.2" />
+  <rect x="22" y="18" width="806" height="104" fill="none" stroke="#ff0033" stroke-width="0.75" stroke-opacity="0.3" />
+
+  <!-- Top Status -->
+  <text x="36" y="34" class="tag">[TELEMETRY // REEI-DP]</text>
+  <text x="814" y="34" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="10" fill="#4d5263">ALL REPOSITORIES SYNCED</text>
 
   <!-- Metric 1: Commits -->
-  <g transform="translate(35, 48)">
-    <rect width="230" height="110" fill="#0e1018" rx="6" stroke="#1f2233" stroke-width="1" />
-    <path d="M 0 0 L 25 0 M 0 0 L 0 25" stroke="#00f5d4" stroke-width="2" />
-    <text x="18" y="32" class="metric-label">Total Contributions</text>
-    <text x="18" y="68" class="metric-value" fill="#00f5d4">{stats["commits"]}</text>
-    <text x="18" y="92" class="sub-note">⚡ Public &amp; Private Commits</text>
+  <g transform="translate(36, 48)">
+    <text y="20" class="lbl">Total Contributions</text>
+    <text y="58" class="val" fill="#f0f1f5">{stats["commits"]}</text>
+    <text y="72" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#ff0033">PUBLIC &amp; RESTRICTED</text>
   </g>
 
-  <!-- Metric 2: Repos -->
-  <g transform="translate(310, 48)">
-    <rect width="230" height="110" fill="#0e1018" rx="6" stroke="#1f2233" stroke-width="1" />
-    <path d="M 0 0 L 25 0 M 0 0 L 0 25" stroke="#ff0055" stroke-width="2" />
-    <text x="18" y="32" class="metric-label">Repositories</text>
-    <text x="18" y="68" class="metric-value" fill="#ff0055">{stats["repos"]}</text>
-    <text x="18" y="92" font-family="'Courier New', monospace" font-size="10" fill="#ff708f">📦 Public &amp; Private Projects</text>
+  <!-- Divider 1 -->
+  <line x1="290" y1="52" x2="290" y2="108" stroke="#1a1c24" stroke-width="1" />
+
+  <!-- Metric 2: Repositories -->
+  <g transform="translate(320, 48)">
+    <text y="20" class="lbl">Repositories</text>
+    <text y="58" class="val" fill="#ff0033">{stats["repos"]}</text>
+    <text y="72" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#63687a">ACTIVE PROJECTS</text>
   </g>
 
-  <!-- Metric 3: Pull Requests / Activity -->
-  <g transform="translate(585, 48)">
-    <rect width="230" height="110" fill="#0e1018" rx="6" stroke="#1f2233" stroke-width="1" />
-    <path d="M 0 0 L 25 0 M 0 0 L 0 25" stroke="#ffbe0b" stroke-width="2" />
-    <text x="18" y="32" class="metric-label">Pull Requests</text>
-    <text x="18" y="68" class="metric-value" fill="#ffbe0b">{stats["prs"]}</text>
-    <text x="18" y="92" font-family="'Courier New', monospace" font-size="10" fill="#ffbe0b">🔄 Contributions &amp; Merges</text>
+  <!-- Divider 2 -->
+  <line x1="560" y1="52" x2="560" y2="108" stroke="#1a1c24" stroke-width="1" />
+
+  <!-- Metric 3: Pull Requests -->
+  <g transform="translate(590, 48)">
+    <text y="20" class="lbl">Pull Requests</text>
+    <text y="58" class="val" fill="#f0f1f5">{stats["prs"]}</text>
+    <text y="72" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#63687a">CODE REVIEWS &amp; MERGES</text>
   </g>
 </svg>"""
 
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(svg_content)
-    print(f"Generated stats SVG at {output_path}")
 
 if __name__ == "__main__":
     out = os.path.join(os.path.dirname(os.path.dirname(__file__)), "assets", "stats.svg")
