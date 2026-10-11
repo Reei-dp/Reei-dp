@@ -116,18 +116,18 @@
     <text x="96" y="32" class="mono" font-size="11" fill="#ff0055" font-weight="bold">Riyo Reaper (Reei-dp)</text>
 
     <text x="440" y="32" class="mono" font-size="11" fill="#697184">// ROLE</text>
-    <text x="520" y="32" class="mono" font-size="11" fill="#e2e8f0" font-weight="bold">Backend &amp; Bot Engineer</text>
+    <text x="520" y="32" class="mono" font-size="11" fill="#e2e8f0" font-weight="bold">Full-Stack Developer</text>
 
     <!-- Row 2: Jinki & Stack -->
     <text x="20" y="62" class="mono" font-size="11" fill="#697184">&gt; JINKI</text>
     <text x="96" y="62" class="mono" font-size="11" fill="#00f5d4" font-weight="bold">"The Ripper" (切り裂き魔)</text>
 
     <text x="440" y="62" class="mono" font-size="11" fill="#697184">// ARSENAL</text>
-    <text x="520" y="62" class="mono" font-size="11" fill="#ffbe0b" font-weight="bold">Go • Python • Docker • Linux</text>
+    <text x="520" y="62" class="mono" font-size="11" fill="#ffbe0b" font-weight="bold">Go • Python • TS • Docker</text>
 
     <!-- Row 3: Focus -->
     <text x="20" y="92" class="mono" font-size="11" fill="#697184">&gt; FOCUS</text>
-    <text x="96" y="92" class="mono" font-size="11" fill="#9da4b8">High-performance microservices, Telegram bots &amp; scalable APIs</text>
+    <text x="96" y="92" class="mono" font-size="11" fill="#9da4b8">Full-stack web applications, scalable APIs &amp; bot architectures</text>
 
     <!-- Row 4: Command Line Prompt -->
     <g transform="translate(20, 126)">
