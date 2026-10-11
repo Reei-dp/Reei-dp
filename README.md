@@ -48,13 +48,3 @@ STATUS     : Active in the Pit
 <img src="./assets/stats.svg" alt="Telemetry Overview" width="100%">
 
 </div>
-
----
-
-### [ FREQUENCY ]
-
-```text
-TELEGRAM : https://t.me/gachi_riyo
-EMAIL    : gachi.riyo@gmail.com
-GITHUB   : https://github.com/Reei-dp
-```
