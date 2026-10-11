@@ -1,7 +1,7 @@
 <div align="center">
 
 <a href="https://t.me/gachi_riyo">
-  <img src="./assets/banner.gif" alt="RIYO // THE CLEANERS" width="100%">
+  <img src="./assets/scissors.gif" alt="RIYO // THE CLEANERS" width="100%">
 </a>
 
 <p align="center">
