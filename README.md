@@ -22,12 +22,11 @@
 
 ### 🎀 About Me
 
-Backend engineer and automation developer with a focus on building fast, scalable services and robust bot infrastructure. Inspired by **Riyo Reaper** from *Gachiakuta* — cutting down messy legacy code and shaping discarded ideas into reliable software.
+Backend engineer and automation developer focused on building fast, scalable services, robust bot infrastructure, and clean APIs.
 
-* 📍 **Location**: The Pit // Global
-* 🧤 **Role**: Backend Developer &amp; Bot Engineer
-* ✂️ **Primary Tool (Jinki)**: The Ripper — fast iteration and clean architecture
-* ⚡ **Core Interests**: Asynchronous microservices, high-load bots, reverse engineering &amp; API design
+* 📍 **Focus**: Backend Development, Bots &amp; Automation
+* 🛠️ **Main Stack**: Go, Python, Docker
+* ⚡ **Interests**: High-load architectures, asynchronous microservices &amp; API design
 
 ---
 
