@@ -1,75 +1,50 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 370" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 380" width="100%" height="100%">
   <defs>
-    <!-- Градиенты палитры Риё: Неоновый маджента, электрический циан и смоль Бездны -->
+    <!-- Цветовые градиенты -->
     <linearGradient id="riyo-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#07080c" />
-      <stop offset="50%" stop-color="#11121b" />
-      <stop offset="100%" stop-color="#050608" />
+      <stop offset="0%" stop-color="#08090e" />
+      <stop offset="50%" stop-color="#10121b" />
+      <stop offset="100%" stop-color="#06070a" />
     </linearGradient>
 
-    <linearGradient id="blade-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="title-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#ff0055" />
-      <stop offset="40%" stop-color="#ff2a8d" />
-      <stop offset="70%" stop-color="#00f5d4" />
+      <stop offset="45%" stop-color="#ff2a8d" />
+      <stop offset="85%" stop-color="#00f5d4" />
       <stop offset="100%" stop-color="#ffffff" />
     </linearGradient>
 
-    <linearGradient id="slash-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="blade-glow" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#ff0055" stop-opacity="0" />
-      <stop offset="50%" stop-color="#ff2a8d" stop-opacity="0.8" />
-      <stop offset="100%" stop-color="#00f5d4" stop-opacity="0" />
+      <stop offset="50%" stop-color="#ff0055" stop-opacity="1" />
+      <stop offset="75%" stop-color="#00f5d4" stop-opacity="1" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
     </linearGradient>
 
-    <!-- Сетка терминала -->
+    <!-- Сетка фона -->
     <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1" />
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#ffffff" stroke-opacity="0.025" stroke-width="1" />
     </pattern>
 
-    <!-- Сигнальная полоса опасности Риё -->
-    <pattern id="riyo-hazard" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-      <rect width="12" height="24" fill="#ff0055" fill-opacity="0.85" />
+    <!-- Сигнальная полоса опасности Бездны -->
+    <pattern id="hazard" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="12" height="24" fill="#ff0055" fill-opacity="0.9" />
       <rect x="12" width="12" height="24" fill="#141520" fill-opacity="0.95" />
     </pattern>
   </defs>
 
   <style>
-    @keyframes riyo-glitch {
-      0% { transform: translate(0); text-shadow: 2px 0 #ff0055, -2px 0 #00f5d4; }
-      2% { transform: translate(-3px, 1px); text-shadow: -3px 0 #ff0055, 3px 0 #00f5d4; }
-      4% { transform: translate(3px, -2px); text-shadow: 3px 0 #ff0055, -3px 0 #00f5d4; }
-      6% { transform: translate(0); text-shadow: none; }
-      48% { transform: translate(0); }
-      50% { transform: translate(-2px, 2px); filter: hue-rotate(45deg); }
-      52% { transform: translate(0); filter: none; }
-      85% { transform: translate(0); }
-      86% { transform: translate(2px, -1px); text-shadow: 2px 0 #ffbe0b; }
-      88% { transform: translate(0); text-shadow: none; }
-      100% { transform: translate(0); }
+    @keyframes slice-anim {
+      0% { transform: translateX(-600px); opacity: 0; }
+      20% { opacity: 1; }
+      40% { transform: translateX(900px); opacity: 1; }
+      41% { opacity: 0; }
+      100% { transform: translateX(900px); opacity: 0; }
     }
 
-    @keyframes blade-cut {
-      0% { stroke-dashoffset: 800; opacity: 0; }
-      15% { opacity: 1; }
-      35% { stroke-dashoffset: 0; opacity: 1; }
-      50% { opacity: 0; }
-      100% { stroke-dashoffset: -800; opacity: 0; }
-    }
-
-    @keyframes scissor-snip {
-      0%, 100% { transform: rotate(0deg); }
-      25% { transform: rotate(-8deg); }
-      50% { transform: rotate(8deg); }
-      75% { transform: rotate(-4deg); }
-    }
-
-    @keyframes flicker {
-      0%, 100% { opacity: 1; }
-      30% { opacity: 0.95; }
-      31% { opacity: 0.3; }
-      32% { opacity: 1; }
-      70% { opacity: 0.8; }
-      71% { opacity: 0.2; }
-      72% { opacity: 1; }
+    @keyframes snip-pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.15); }
     }
 
     @keyframes cursor-blink {
@@ -77,139 +52,133 @@
       50%, 100% { opacity: 0; }
     }
 
-    .ascii-text {
-      font-family: 'Courier New', 'Fira Code', 'JetBrains Mono', Consolas, monospace;
+    @keyframes subtle-glitch {
+      0%, 100% { transform: translate(0); }
+      92% { transform: translate(0); }
+      93% { transform: translate(-2px, 1px); }
+      95% { transform: translate(2px, -1px); }
+      96% { transform: translate(0); }
+    }
+
+    .hero-title {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Impact', 'Arial Black', sans-serif;
       font-weight: 900;
-      letter-spacing: 0px;
+      font-size: 46px;
+      letter-spacing: 5px;
+      fill: url(#title-gradient);
+      animation: subtle-glitch 5s infinite;
     }
 
-    .glitch {
-      animation: riyo-glitch 3.8s infinite steps(1);
-    }
-
-    .snip-icon {
-      transform-origin: center;
-      animation: scissor-snip 2.5s infinite ease-in-out;
-      display: inline-block;
-    }
-
-    .blade-line {
-      stroke-dasharray: 800;
-      animation: blade-cut 5s infinite cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .flicker {
-      animation: flicker 4s infinite linear;
+    .sub-title {
+      font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      fill: #8b92a5;
     }
 
     .cursor {
       animation: cursor-blink 0.8s infinite;
     }
 
-    .mono-label {
-      font-family: 'Courier New', 'JetBrains Mono', monospace;
-      font-size: 11px;
-      fill: #8e94a5;
+    .snip-icon {
+      transform-origin: center;
+      animation: snip-pulse 2s infinite ease-in-out;
+    }
+
+    .laser-slash {
+      animation: slice-anim 4.5s infinite cubic-bezier(0.2, 0.8, 0.2, 1);
     }
   </style>
 
-  <!-- Фон: Глубокая Тьма Бездны + Сетка -->
-  <rect width="850" height="370" fill="url(#riyo-bg)" rx="10" />
-  <rect width="850" height="370" fill="url(#grid)" rx="10" />
+  <!-- Фон -->
+  <rect width="850" height="380" fill="url(#riyo-bg)" rx="10" />
+  <rect width="850" height="380" fill="url(#grid)" rx="10" />
 
-  <!-- Диагональный рез ножниц (The Ripper Slash effect) -->
-  <line x1="-50" y1="50" x2="900" y2="330" stroke="url(#blade-gradient)" stroke-width="2.5" class="blade-line" stroke-linecap="round" />
-  <line x1="-50" y1="50" x2="900" y2="330" stroke="url(#slash-glow)" stroke-width="12" class="blade-line" stroke-linecap="round" filter="blur(4px)" />
+  <!-- Сигнальные ленты опасности (верх и низ) -->
+  <rect x="0" y="0" width="850" height="8" fill="url(#hazard)" rx="8" />
+  <rect x="0" y="372" width="850" height="8" fill="url(#hazard)" rx="8" />
 
-  <!-- Сигнальные ленты опасности -->
-  <rect x="0" y="0" width="850" height="10" fill="url(#riyo-hazard)" rx="10" />
-  <rect x="0" y="360" width="850" height="10" fill="url(#riyo-hazard)" rx="10" />
+  <!-- Угловые технологичные засечки -->
+  <path d="M 25 28 L 50 28 M 25 28 L 25 53" stroke="#ff0055" stroke-width="2.5" stroke-linecap="square" />
+  <path d="M 825 28 L 800 28 M 825 28 L 825 53" stroke="#00f5d4" stroke-width="2.5" stroke-linecap="square" />
+  <path d="M 25 352 L 50 352 M 25 352 L 25 327" stroke="#00f5d4" stroke-width="2.5" stroke-linecap="square" />
+  <path d="M 825 352 L 800 352 M 825 352 L 825 327" stroke="#ff0055" stroke-width="2.5" stroke-linecap="square" />
 
-  <!-- Угловые граффити-засечки -->
-  <path d="M 25 35 L 55 35 M 25 35 L 25 65" stroke="#ff0055" stroke-width="3" stroke-linecap="square" />
-  <path d="M 825 35 L 795 35 M 825 35 L 825 65" stroke="#00f5d4" stroke-width="3" stroke-linecap="square" />
-  <path d="M 25 335 L 55 335 M 25 335 L 25 305" stroke="#00f5d4" stroke-width="3" stroke-linecap="square" />
-  <path d="M 825 335 L 795 335 M 825 335 L 825 305" stroke="#ff0055" stroke-width="3" stroke-linecap="square" />
+  <!-- Верхняя строка статуса -->
+  <g transform="translate(35, 32)">
+    <rect x="0" y="0" width="165" height="18" fill="#ff0055" fill-opacity="0.15" stroke="#ff0055" stroke-width="1" rx="2" />
+    <text x="8" y="13" font-family="'Courier New', monospace" font-size="10" font-weight="bold" fill="#ff0055">✂ SECTOR: THE PIT // 奈落</text>
 
-  <!-- Верхняя панель статуса Уборщика -->
-  <g transform="translate(35, 38)">
-    <rect x="0" y="0" width="170" height="18" fill="#ff0055" fill-opacity="0.18" stroke="#ff0055" stroke-width="1" />
-    <text x="6" y="13" font-family="'Courier New', monospace" font-size="10" font-weight="bold" fill="#ff0055">✂ RIYO REAPER // リヨ</text>
-
-    <text x="185" y="13" class="mono-label">JANITOR COMBAT CORPS // JINKI: THE RIPPER</text>
-    <text x="625" y="13" class="mono-label flicker" fill="#00f5d4">STATUS: SNIP-SNIP [READY]</text>
+    <text x="180" y="13" font-family="'Courier New', monospace" font-size="10" fill="#757d91">CLEANERS VANGUARD // AGENT: RIYO REAPER</text>
+    <text x="690" y="13" font-family="'Courier New', monospace" font-size="10" font-weight="bold" fill="#00f5d4">[SNIP READY]</text>
   </g>
 
-  <!-- ASCII Header: RIYO REAPER с глитчем и градиентом -->
-  <g class="glitch" transform="translate(42, 68)">
-    <!-- Теневой акцент циана -->
-    <text class="ascii-text" font-size="10.8" fill="#00f5d4" opacity="0.4" x="-1.5" y="-1">
-      <tspan x="0" dy="0">  ██████╗ ██╗██╗   ██╗ ██████╗       ██████╗ ███████╗ █████╗ ██████╗ ███████╗██████╗ </tspan>
-      <tspan x="0" dy="12">  ██╔══██╗██║╚██╗ ██╔╝██╔═══██╗      ██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗</tspan>
-      <tspan x="0" dy="12">  ██████╔╝██║ ╚████╔╝ ██║   ██║      ██████╔╝█████╗  ███████║██████╔╝█████╗  ██████╔╝</tspan>
-      <tspan x="0" dy="12">  ██╔══██╗██║  ╚██╔╝  ██║   ██║      ██╔══██╗██╔══╝  ██╔══██║██╔═══╝ ██╔══╝  ██╔══██╗</tspan>
-      <tspan x="0" dy="12">  ██║  ██║██║   ██║   ╚██████╔╝      ██║  ██║███████╗██║  ██║██║     ███████╗██║  ██║</tspan>
-      <tspan x="0" dy="12">  ╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝       ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝     ╚══════╝╚═╝  ╚═╝</tspan>
+  <!-- Центральный блок: Заголовок RIYO REAPER (Четкая векторная типографика) -->
+  <g transform="translate(35, 100)">
+    <text x="0" y="0" class="hero-title">RIYO REAPER</text>
+    
+    <!-- Японский суб-тег и подразделение -->
+    <text x="4" y="24" class="sub-title">
+      <tspan fill="#ff0055">リヨ・リーパー</tspan>
+      <tspan fill="#4d5366"> // </tspan>
+      <tspan fill="#00f5d4">JINKI: THE RIPPER</tspan>
+      <tspan fill="#4d5366"> // </tspan>
+      <tspan fill="#e2e8f0">THE CLEANERS [掃除屋]</tspan>
     </text>
 
-    <!-- Основной неоново-розовый / маджента слой -->
-    <text class="ascii-text" font-size="10.8" fill="url(#blade-gradient)">
-      <tspan x="0" dy="0">  ██████╗ ██╗██╗   ██╗ ██████╗       ██████╗ ███████╗ █████╗ ██████╗ ███████╗██████╗ </tspan>
-      <tspan x="0" dy="12">  ██╔══██╗██║╚██╗ ██╔╝██╔═══██╗      ██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗</tspan>
-      <tspan x="0" dy="12">  ██████╔╝██║ ╚████╔╝ ██║   ██║      ██████╔╝█████╗  ███████║██████╔╝█████╗  ██████╔╝</tspan>
-      <tspan x="0" dy="12">  ██╔══██╗██║  ╚██╔╝  ██║   ██║      ██╔══██╗██╔══╝  ██╔══██║██╔═══╝ ██╔══╝  ██╔══██╗</tspan>
-      <tspan x="0" dy="12">  ██║  ██║██║   ██║   ╚██████╔╝      ██║  ██║███████╗██║  ██║██║     ███████╗██║  ██║</tspan>
-      <tspan x="0" dy="12">  ╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝       ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝     ╚══════╝╚═╝  ╚═╝</tspan>
-    </text>
+    <!-- Анимированная лазерная линия разреза ножниц через логотип -->
+    <g class="laser-slash">
+      <line x1="-100" y1="-15" x2="300" y2="-15" stroke="url(#blade-glow)" stroke-width="3" stroke-linecap="round" />
+    </g>
   </g>
 
-  <!-- Линия из символов ножниц и цепей -->
-  <text x="35" y="165" font-family="'Courier New', monospace" font-size="11" fill="#44495e">
-    ✂ ═══════ ⚡ ═══════════════════════════════════════════════════════════════════ ⚡ ═══════ ✂
-  </text>
+  <!-- Декоративная линия разделения -->
+  <line x1="35" y1="145" x2="815" y2="145" stroke="#212535" stroke-width="1" />
+  <circle cx="425" cy="145" r="3" fill="#ff0055" />
 
-  <!-- Терминал Ножниц Риё (The Ripper Console) -->
-  <g transform="translate(35, 180)">
-    <!-- Рамка окна -->
-    <rect x="0" y="0" width="780" height="142" fill="#0b0c13" rx="5" stroke="#252738" stroke-width="1.2" />
+  <!-- Консоль Уборщицы (The Ripper Terminal Window) -->
+  <g transform="translate(35, 162)">
+    <!-- Фоновое окно терминала -->
+    <rect x="0" y="0" width="780" height="190" fill="#0c0d15" rx="6" stroke="#232636" stroke-width="1.2" />
 
     <!-- Шапка окна -->
-    <rect x="0" y="0" width="780" height="24" fill="#141622" rx="5" />
-    <circle cx="15" cy="12" r="4.5" fill="#ff0055" />
-    <circle cx="30" cy="12" r="4.5" fill="#ffbe0b" />
-    <circle cx="45" cy="12" r="4.5" fill="#00f5d4" />
-    <text x="65" y="16" font-family="'Courier New', monospace" font-size="10.5" fill="#9096a9" font-weight="bold">THE_RIPPER_CONSOLE_V3.1 // PILOT: RIYO_REAPER [Reei-dp]</text>
-    <text x="685" y="16" font-family="'Courier New', monospace" font-size="10" fill="#00f5d4" font-weight="bold">[SNIP READY]</text>
+    <rect x="0" y="0" width="780" height="26" fill="#141624" rx="6" />
+    <circle cx="16" cy="13" r="4.5" fill="#ff0055" />
+    <circle cx="31" cy="13" r="4.5" fill="#ffbe0b" />
+    <circle cx="46" cy="13" r="4.5" fill="#00f5d4" />
+    <text x="68" y="17" font-family="'Courier New', monospace" font-size="11" fill="#8d94a7" font-weight="bold">THE_RIPPER_CONSOLE_V3.1 // PILOT: RIYO_REAPER [Reei-dp]</text>
+    <text x="690" y="17" font-family="'Courier New', monospace" font-size="10.5" fill="#00f5d4" font-weight="bold">[LINK_OK]</text>
 
     <!-- Содержимое терминала -->
-    <g transform="translate(18, 45)">
-      <text font-family="'Courier New', 'Fira Code', monospace" font-size="11.5" fill="#e2e8f0">
-        <tspan x="0" dy="0" fill="#7d8498">&gt; GIVER:</tspan>
-        <tspan dx="10" fill="#ff0055" font-weight="bold">RIYO REAPER (Reei-dp)</tspan>
-        <tspan dx="30" fill="#7d8498">AFFILIATION:</tspan>
-        <tspan dx="10" fill="#ffffff">THE CLEANERS [掃除屋]</tspan>
-        <tspan dx="30" fill="#7d8498">RANK:</tspan>
-        <tspan dx="10" fill="#00f5d4">FRONT-LINE COMBATANT</tspan>
+    <g transform="translate(20, 52)">
+      <text font-family="'Courier New', 'Fira Code', monospace" font-size="12" fill="#e2e8f0">
+        <tspan x="0" dy="0" fill="#6c7387">&gt; GIVER:</tspan>
+        <tspan dx="12" fill="#ff0055" font-weight="bold">RIYO REAPER (Reei-dp)</tspan>
+        <tspan dx="35" fill="#6c7387">AFFILIATION:</tspan>
+        <tspan dx="12" fill="#ffffff">THE CLEANERS [掃除屋]</tspan>
+        <tspan dx="35" fill="#6c7387">RANK:</tspan>
+        <tspan dx="12" fill="#00f5d4">FRONT-LINE</tspan>
       </text>
 
-      <text font-family="'Courier New', 'Fira Code', monospace" font-size="11.5" fill="#e2e8f0" y="24">
-        <tspan x="0" fill="#7d8498">&gt; JINKI (人器):</tspan>
-        <tspan dx="10" fill="#ff2a8d" font-weight="bold">"THE RIPPER" (切り裂き魔)</tspan>
-        <tspan dx="15" fill="#7d8498">—</tspan>
-        <tspan dx="10" fill="#00f5d4">TRANSFIGURED GIANT SCISSORS</tspan>
+      <text font-family="'Courier New', 'Fira Code', monospace" font-size="12" fill="#e2e8f0" y="28">
+        <tspan x="0" fill="#6c7387">&gt; JINKI (人器):</tspan>
+        <tspan dx="12" fill="#ff2a8d" font-weight="bold">"THE RIPPER" (切り裂き魔)</tspan>
+        <tspan dx="15" fill="#6c7387">—</tspan>
+        <tspan dx="12" fill="#00f5d4">SCISSORS OF ABSOLUTE PURGE</tspan>
       </text>
 
-      <text font-family="'Courier New', 'Fira Code', monospace" font-size="11.5" fill="#e2e8f0" y="46">
-        <tspan x="0" fill="#7d8498">&gt; FOCUS:</tspan>
-        <tspan dx="10" fill="#ffbe0b">BACKEND ARCHITECTURE, AUTOMATION &amp; APIS</tspan>
+      <text font-family="'Courier New', 'Fira Code', monospace" font-size="12" fill="#e2e8f0" y="56">
+        <tspan x="0" fill="#6c7387">&gt; FOCUS:</tspan>
+        <tspan dx="12" fill="#ffbe0b">BACKEND ARCHITECTURE, AUTOMATION &amp; SCALABLE APIS</tspan>
       </text>
 
-      <text font-family="'Courier New', 'Fira Code', monospace" font-size="11.5" fill="#e2e8f0" y="68">
-        <tspan x="0" fill="#7d8498">&gt; MOTTO:</tspan>
-        <tspan dx="10" fill="#ff0055" font-style="italic">"Snip away the bloat, keep what matters."</tspan>
+      <text font-family="'Courier New', 'Fira Code', monospace" font-size="12" fill="#e2e8f0" y="84">
+        <tspan x="0" fill="#6c7387">&gt; MOTTO:</tspan>
+        <tspan dx="12" fill="#e2e8f0">"Snip away the bloat, keep what matters."</tspan>
       </text>
 
-      <text font-family="'Courier New', 'Fira Code', monospace" font-size="12" fill="#e2e8f0" y="90">
+      <text font-family="'Courier New', 'Fira Code', monospace" font-size="12.5" fill="#e2e8f0" y="112">
         <tspan x="0" fill="#00f5d4">&gt; riyo --build --optimize --clean</tspan>
         <tspan class="cursor" fill="#ff0055" font-weight="bold"> █</tspan>
       </text>
