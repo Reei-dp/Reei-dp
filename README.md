@@ -17,11 +17,35 @@
 
 ---
 
-- **LANGUAGES** : `Go` • `Python` • `TypeScript` • `JavaScript` • `C/C++` • `Shell`
-- **BACKEND & APIS** : `FastAPI` • `Gin` • `AsyncIO` • `REST` • `WebSocket`
-- **FRONTEND & UI** : `React` • `Next.js` • `HTML5 / CSS3` • `Tailwind`
-- **SYSTEMS & INFRA** : `Docker` • `Linux Kernel` • `PostgreSQL` • `Redis` • `Git`
-- **AUTOMATION** : `Telegram Bot Architecture` • `Telethon / Pyrogram` • `Reverse Engineering`
+<div align="center">
+
+<p>
+  <img src="https://img.shields.io/badge/Go-0c0e14?style=for-the-badge&logo=go&logoColor=00ADD8&borderColor=1f2336" />
+  <img src="https://img.shields.io/badge/Python-0c0e14?style=for-the-badge&logo=python&logoColor=3776AB&borderColor=1f2336" />
+  <img src="https://img.shields.io/badge/TypeScript-0c0e14?style=for-the-badge&logo=typescript&logoColor=3178C6&borderColor=1f2336" />
+  <img src="https://img.shields.io/badge/JavaScript-0c0e14?style=for-the-badge&logo=javascript&logoColor=F7DF1E&borderColor=1f2336" />
+  <img src="https://img.shields.io/badge/C%2B%2B-0c0e14?style=for-the-badge&logo=cplusplus&logoColor=00599C&borderColor=1f2336" />
+  <img src="https://img.shields.io/badge/Bash-0c0e14?style=for-the-badge&logo=gnubash&logoColor=4EAA25&borderColor=1f2336" />
+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/React-0c0e14?style=for-the-badge&logo=react&logoColor=61DAFB&borderColor=1f2336" />
+  <img src="https://img.shields.io/badge/Next.js-0c0e14?style=for-the-badge&logo=nextdotjs&logoColor=white&borderColor=1f2336" />
+  <img src="https://img.shields.io/badge/FastAPI-0c0e14?style=for-the-badge&logo=fastapi&logoColor=009688&borderColor=1f2336" />
+  <img src="https://img.shields.io/badge/Gin-0c0e14?style=for-the-badge&logo=go&logoColor=00ADD8&borderColor=1f2336" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-0c0e14?style=for-the-badge&logo=tailwindcss&logoColor=06B6D4&borderColor=1f2336" />
+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/Kubernetes-0c0e14?style=for-the-badge&logo=kubernetes&logoColor=326CE5&borderColor=1f2336" />
+  <img src="https://img.shields.io/badge/Docker-0c0e14?style=for-the-badge&logo=docker&logoColor=2496ED&borderColor=1f2336" />
+  <img src="https://img.shields.io/badge/PostgreSQL-0c0e14?style=for-the-badge&logo=postgresql&logoColor=4169E1&borderColor=1f2336" />
+  <img src="https://img.shields.io/badge/Redis-0c0e14?style=for-the-badge&logo=redis&logoColor=DC382D&borderColor=1f2336" />
+  <img src="https://img.shields.io/badge/Linux-0c0e14?style=for-the-badge&logo=linux&logoColor=white&borderColor=1f2336" />
+  <img src="https://img.shields.io/badge/Git-0c0e14?style=for-the-badge&logo=git&logoColor=F05032&borderColor=1f2336" />
+</p>
+
+</div>
 
 ---
 

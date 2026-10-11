@@ -161,9 +161,9 @@ for idx, (lines, dur) in enumerate(ANIM_SEQUENCE):
 
     dossier = [
         ("OPERATIVE", "Riyo (Reei-dp)", TEXT_RED),
-        ("ROLE", "Full-Stack Engineer // Automations & Systems", TEXT_WHITE),
-        ("ARSENAL", "Go • Python • TypeScript • Docker • Linux", TEXT_CYAN),
-        ("SPECIALTY", "High-Load Bot Architectures & Scalable APIs", TEXT_WHITE),
+        ("ROLE", "Full-Stack Developer (Back & Front)", TEXT_WHITE),
+        ("ARSENAL", "Go • Python • TS/React • Docker • K8s", TEXT_CYAN),
+        ("SPECIALTY", "Full-Stack Web Apps, Scalable APIs & Microservices", TEXT_WHITE),
         ("TELEGRAM", "t.me/gachi_riyo", TEXT_RED),
         ("COMMITS", "12,123+ Verified [Public & Restricted]", TEXT_WHITE),
     ]
