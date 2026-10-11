@@ -16,7 +16,7 @@ font_title = ImageFont.truetype(FONT_PATH, 25)
 font_mono = ImageFont.truetype(FONT_PATH, 11)
 font_small = ImageFont.truetype(FONT_PATH, 10)
 
-# Well-proportioned, heavy shears with double-edge blades, ergonomic shanks and dual finger loops
+# Full physical kinematics: Both blades AND handles move synchronously
 FRAME_OPEN = [
     r"       \                   /       ",
     r"       |\                 /|       ",
@@ -29,11 +29,11 @@ FRAME_OPEN = [
     r"            \  \   /  /            ",
     r"             \  \ /  /             ",
     r"              \-(X)-/              ",
-    r"              / / \ \              ",
-    r"             / /   \ \             ",
-    r"            / /     \ \            ",
-    r"          ( O )     ( O )          ",
-    r"           \_/       \_/           ",
+    r"              /     \              ",
+    r"             /       \             ",
+    r"           /           \           ",
+    r"        ( O )         ( O )        ",
+    r"         \_/           \_/         ",
 ]
 
 FRAME_CLOSING = [
@@ -67,11 +67,11 @@ FRAME_SNIP = [
     r"                | |                ",
     r"                | |                ",
     r"              \-(X)-/              ",
-    r"              / / \ \              ",
-    r"             / /   \ \             ",
-    r"            / /     \ \            ",
-    r"          ( O )     ( O )          ",
-    r"           \_/       \_/           ",
+    r"               / | \               ",
+    r"              /  |  \              ",
+    r"             (   |   )             ",
+    r"            ( O )( O )             ",
+    r"             \_/  \_/              ",
 ]
 
 FRAME_SPARKS = [
@@ -86,11 +86,11 @@ FRAME_SPARKS = [
     r"                | |                ",
     r"                | |                ",
     r"              \-(X)-/              ",
-    r"              / / \ \              ",
-    r"             / /   \ \             ",
-    r"            / /     \ \            ",
-    r"          ( O )     ( O )          ",
-    r"           \_/       \_/           ",
+    r"               / | \               ",
+    r"              /  |  \              ",
+    r"             (   |   )             ",
+    r"            ( O )( O )             ",
+    r"             \_/  \_/              ",
 ]
 
 FRAME_RECOIL = [
@@ -112,21 +112,18 @@ FRAME_RECOIL = [
     r"           \_/       \_/           ",
 ]
 
-# Rapid, snappy sequence:
-# Open (2 ticks) -> Closing (1 tick) -> SNIP! (1 tick) -> Sparks (1 tick) -> Recoil (1 tick) -> Back to open
+# Deliberate, realistic mechanical rhythm:
 ANIM_SEQUENCE = [
-    (FRAME_OPEN, 120),
-    (FRAME_OPEN, 100),
-    (FRAME_CLOSING, 60),
-    (FRAME_SNIP, 70),
-    (FRAME_SPARKS, 60),
-    (FRAME_RECOIL, 60),
-    (FRAME_OPEN, 120),
-    (FRAME_OPEN, 100),
-    (FRAME_CLOSING, 60),
-    (FRAME_SNIP, 70),
-    (FRAME_SPARKS, 60),
-    (FRAME_RECOIL, 60),
+    (FRAME_OPEN, 300),
+    (FRAME_CLOSING, 110),
+    (FRAME_SNIP, 150),
+    (FRAME_SPARKS, 110),
+    (FRAME_RECOIL, 110),
+    (FRAME_OPEN, 350),
+    (FRAME_CLOSING, 110),
+    (FRAME_SNIP, 150),
+    (FRAME_SPARKS, 110),
+    (FRAME_RECOIL, 110),
 ]
 
 images = []
@@ -146,7 +143,7 @@ for idx, (lines, dur) in enumerate(ANIM_SEQUENCE):
     draw.text((WIDTH - 155, 20), "STATUS: ARMED [OK]", font=font_small, fill=TEXT_RED)
     draw.line([(24, 36), (WIDTH - 25, 36)], fill=BORDER_COLOR, width=1)
 
-    # 3. Left Column: Scissor Box (Width 256px)
+    # 3. Left Column: Scissor Box
     draw.rectangle([24, 46, 268, 252], fill=(10, 12, 17), outline=BORDER_COLOR, width=1)
     draw.text((34, 52), "[ JINKI // SCISSORS ]", font=font_small, fill=TEXT_MUTED)
 
@@ -188,11 +185,16 @@ for idx, (lines, dur) in enumerate(ANIM_SEQUENCE):
     images.append(img)
     durations.append(dur)
 
-# Write to a new cache-busting filename
-out_gif = os.path.join(os.path.dirname(os.path.dirname(__file__)), "assets", "scissors.gif")
+out_gif = os.path.join(os.path.dirname(os.path.dirname(__file__)), "assets", "cleaner-scissors.gif")
 images[0].save(out_gif, save_all=True, append_images=images[1:], duration=durations, loop=0)
-# Also overwrite banner.gif and riyo-banner.gif
-out_gif2 = os.path.join(os.path.dirname(os.path.dirname(__file__)), "assets", "banner.gif")
+
+out_gif2 = os.path.join(os.path.dirname(os.path.dirname(__file__)), "assets", "riyo-scissors.gif")
 images[0].save(out_gif2, save_all=True, append_images=images[1:], duration=durations, loop=0)
 
-print(f"Generated fast, well-proportioned scissors GIF at {out_gif}")
+out_gif3 = os.path.join(os.path.dirname(os.path.dirname(__file__)), "assets", "scissors.gif")
+images[0].save(out_gif3, save_all=True, append_images=images[1:], duration=durations, loop=0)
+
+out_gif4 = os.path.join(os.path.dirname(os.path.dirname(__file__)), "assets", "banner.gif")
+images[0].save(out_gif4, save_all=True, append_images=images[1:], duration=durations, loop=0)
+
+print(f"Generated realistic kinematic scissors GIF at {out_gif}")
