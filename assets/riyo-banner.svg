@@ -200,17 +200,17 @@
       </text>
 
       <text font-family="'Courier New', 'Fira Code', monospace" font-size="11.5" fill="#e2e8f0" y="46">
-        <tspan x="0" fill="#7d8498">&gt; SPECIALTY:</tspan>
-        <tspan dx="10" fill="#ffbe0b">BACKEND ARCHITECTURE, BOTS &amp; SLICING CORRUPT BUGS</tspan>
+        <tspan x="0" fill="#7d8498">&gt; FOCUS:</tspan>
+        <tspan dx="10" fill="#ffbe0b">BACKEND ARCHITECTURE, AUTOMATION &amp; APIS</tspan>
       </text>
 
       <text font-family="'Courier New', 'Fira Code', monospace" font-size="11.5" fill="#e2e8f0" y="68">
-        <tspan x="0" fill="#7d8498">&gt; QUOTE:</tspan>
-        <tspan dx="10" fill="#ff0055" font-style="italic">"Snip-snip! I'll cut down all the trash code before it drags you into the Pit!"</tspan>
+        <tspan x="0" fill="#7d8498">&gt; MOTTO:</tspan>
+        <tspan dx="10" fill="#ff0055" font-style="italic">"Snip away the bloat, keep what matters."</tspan>
       </text>
 
       <text font-family="'Courier New', 'Fira Code', monospace" font-size="12" fill="#e2e8f0" y="90">
-        <tspan x="0" fill="#00f5d4">&gt; riyo --slice --target bugs_and_legacy --clean</tspan>
+        <tspan x="0" fill="#00f5d4">&gt; riyo --build --optimize --clean</tspan>
         <tspan class="cursor" fill="#ff0055" font-weight="bold"> █</tspan>
       </text>
     </g>

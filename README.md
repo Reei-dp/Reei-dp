@@ -1,18 +1,18 @@
 <div align="center">
 
-<!-- КАСТОМНЫЙ АНИМИРОВАННЫЙ БАННЕР В СТИЛЕ RIYO REAPER // GACHIAKUTA -->
+<!-- ANIMATED RIYO REAPER BANNER -->
 <img src="./assets/riyo-banner.svg" alt="Riyo Reaper Cleaner Console" width="100%">
 
 <p align="center">
   <code><b>✂️ SECTOR: THE PIT</b></code> •
   <code><b>AGENT: RIYO [Reei-dp]</b></code> •
-  <code><b>JINKI: THE RIPPER (切り裂き魔)</b></code> •
-  <code><b>TARGET: DIRTY CODE & BUGS</b></code>
+  <code><b>JINKI: THE RIPPER</b></code> •
+  <code><b>FOCUS: BACKEND &amp; AUTOMATION</b></code>
 </p>
 
 ```text
  ✂ ══════════════════════════════════════════════════════════════════════ ✂
-  "ЧИК-ЧИК! ✂️ ЕСЛИ ТВОЙ КОД МУСОР — Я ОТРЕЖУ ЕГО БЕЗ СОЖАЛЕНИЯ!"
+  "Snip away the bloat. Keep the code fast, modular, and reliable."
  ✂ ══════════════════════════════════════════════════════════════════════ ✂
 ```
 
@@ -20,24 +20,22 @@
 
 ---
 
-### 🎀 [ DOSSIER: RIYO REAPER // ДОСЬЕ УБОРЩИЦЫ ]
+### 🎀 About Me
 
-> **«Не стой на пути у гигантских ножниц, если не хочешь быть разрезанным на байты!»**  
-> Член ударного отряда **Уборщиков (The Cleaners)**. Специалист по скоростной зачистке архитектурного мусора, разработке бэкендов и боевых ботов. Превращаю хаос Бездны в отточенные до блеска сервисы.
+Backend engineer and automation developer with a focus on building fast, scalable services and robust bot infrastructure. Inspired by **Riyo Reaper** from *Gachiakuta* — cutting down messy legacy code and shaping discarded ideas into reliable software.
 
-* 📍 **Дислокация**: *Свалка Бездны (The Pit)*
-* 🧤 **Статус**: **Дарительница (Giver / 通)**
-* ✂️ **Дзинки (Jinki)**: **«The Ripper» (Потрошитель / 切り裂き魔)** — *ножницы, разрезающие любые баги и легаси*
-* ⚡ **Стиль боя**: *Высокоскоростная разработка, асинхронные микросервисы, боевые боты*
-* 🎯 **Девиз**: *Чистый код или смерть под лезвиями!*
+* 📍 **Location**: The Pit // Global
+* 🧤 **Role**: Backend Developer &amp; Bot Engineer
+* ✂️ **Primary Tool (Jinki)**: The Ripper — fast iteration and clean architecture
+* ⚡ **Core Interests**: Asynchronous microservices, high-load bots, reverse engineering &amp; API design
 
 ---
 
-### 🗡️ [ THE RIPPER'S BLADES // ОРУДИЯ И СТЕК ]
+### 🗡️ Tech Stack &amp; Tools
 
 <div align="center">
 
-#### `// CUTTING EDGE BACKEND (ОСНОВНЫЕ ЛЕЗВИЯ)`
+#### `// LANGUAGES & BACKEND`
 <p>
   <img src="https://img.shields.io/badge/Go_(Gin)-0b0c13?style=for-the-badge&logo=go&logoColor=00ADD8&borderColor=ff0055" />
   <img src="https://img.shields.io/badge/Python_(FastAPI)-0b0c13?style=for-the-badge&logo=python&logoColor=ffbe0b&borderColor=ff0055" />
@@ -46,39 +44,44 @@
   <img src="https://img.shields.io/badge/Redis-0b0c13?style=for-the-badge&logo=redis&logoColor=DC382D&borderColor=ff0055" />
 </p>
 
-#### `// COMBAT GEAR & BOT INFRASTRUCTURE (БОЕВОЙ ОБВЕС И АВТОМАТИЗАЦИЯ)`
+#### `// BOT ARCHITECTURE & DEVOPS`
 <p>
   <img src="https://img.shields.io/badge/Telegram_Bot_API-0b0c13?style=for-the-badge&logo=telegram&logoColor=26A5E4&borderColor=00f5d4" />
   <img src="https://img.shields.io/badge/Docker-0b0c13?style=for-the-badge&logo=docker&logoColor=2496ED&borderColor=00f5d4" />
-  <img src="https://img.shields.io/badge/Linux_Env-0b0c13?style=for-the-badge&logo=linux&logoColor=ffffff&borderColor=00f5d4" />
-  <img src="https://img.shields.io/badge/Git_Clean-0b0c13?style=for-the-badge&logo=git&logoColor=F05032&borderColor=00f5d4" />
+  <img src="https://img.shields.io/badge/Linux-0b0c13?style=for-the-badge&logo=linux&logoColor=ffffff&borderColor=00f5d4" />
+  <img src="https://img.shields.io/badge/Git-0b0c13?style=for-the-badge&logo=git&logoColor=F05032&borderColor=00f5d4" />
 </p>
 
 </div>
 
 ---
 
-### 📊 [ ABYSS RECONNAISSANCE // БОЕВАЯ СТАТИСТИКА @Reei-dp ]
+### 📊 Activity &amp; Overview
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=Reei-dp&show_icons=true&theme=transparent&title_color=ff0055&text_color=8e94a5&icon_color=00f5d4&border_color=252738&hide_border=false" alt="Reei-dp GitHub Stats" width="49%">
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Reei-dp&layout=compact&theme=transparent&title_color=ff0055&text_color=8e94a5&border_color=252738&hide_border=false" alt="Top Languages" width="45%">
+<!-- LIVE VERIFIED METRICS INCLUDING PRIVATE CONTRIBUTIONS -->
+<img src="./assets/stats.svg" alt="Reei-dp Stats" width="100%">
+
+<br><br>
+
+<!-- COMPACT TOP LANGUAGES -->
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Reei-dp&layout=compact&theme=transparent&title_color=ff0055&text_color=8e94a5&border_color=252738&hide_border=false" alt="Top Languages" width="60%">
 
 </div>
 
 ---
 
-### 📡 [ UNDERGROUND RADIO // ЧАСТОТЫ СВЯЗИ ]
+### 📡 Contact &amp; Channels
 
 ```text
- ┌──[ RIYO'S FREQUENCY CHANNELS ]─────────────────────────────────────┐
- │  ✂ TELEGRAM : @your_telegram                                       │
+ ┌──[ TRANSMISSION ]──────────────────────────────────────────────────┐
+ │  ✂ EMAIL    : gachi.riyo@gmail.com                                 │
  │  ✂ GITHUB   : github.com/Reei-dp                                   │
- │  ✂ EMAIL    : slimsslims1337@gmail.com                             │
+ │  ✂ TELEGRAM : @your_telegram                                       │
  └────────────────────────────────────────────────────────────────────┘
 ```
 
 <div align="center">
-  <sub><code>[ ⚠ SNIP-SNIP — CLEANED AND PURGED BY RIYO REAPER // THE CLEANERS ]</code></sub>
+  <sub><code>[ ✂ CLEANED &amp; MAINTAINED BY RIYO // REEI-DP ]</code></sub>
 </div>
