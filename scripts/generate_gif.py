@@ -208,7 +208,8 @@ for i in range(num_frames):
 
     images.append(img)
 
-out_gif = os.path.join(os.path.dirname(os.path.dirname(__file__)), "assets", "riyo-banner.gif")
-# 130ms per frame for a punchy, clean snip rhythm
+out_gif = os.path.join(os.path.dirname(os.path.dirname(__file__)), "assets", "banner.gif")
 images[0].save(out_gif, save_all=True, append_images=images[1:], duration=130, loop=0)
+out_gif2 = os.path.join(os.path.dirname(os.path.dirname(__file__)), "assets", "riyo-banner.gif")
+images[0].save(out_gif2, save_all=True, append_images=images[1:], duration=130, loop=0)
 print(f"Generated pixel-perfect symmetrical animated GIF at {out_gif}")
