@@ -16,139 +16,139 @@ font_title = ImageFont.truetype(FONT_PATH, 26)
 font_mono = ImageFont.truetype(FONT_PATH, 12)
 font_small = ImageFont.truetype(FONT_PATH, 10)
 
+# Each frame is 31 chars wide, centered at index 15.
+# Perfectly mirrored and symmetrical.
 SCISSOR_FRAMES = [
-    # Frame 0: Wide open
+    # 0: Wide open (Rest / Ready)
     [
-        r"      \             /      ",
-        r"       \           /       ",
-        r"        \         /        ",
-        r"         \   _   /         ",
-        r"          \ / \ /          ",
-        r"           \   /           ",
-        r"            \ /            ",
-        r"             X             ",
-        r"            / \            ",
-        r"           /   \           ",
-        r"          (     )          ",
-        r"           \___/           ",
-        r"                           ",
+        r"      \                 /      ",
+        r"       \               /       ",
+        r"        \             /        ",
+        r"         \           /         ",
+        r"          \         /          ",
+        r"           \       /           ",
+        r"            \     /            ",
+        r"             \   /             ",
+        r"              (X)              ",
+        r"             /   \             ",
+        r"           /       \           ",
+        r"          ( O ) ( O )          ",
+        r"           \_/   \_/           ",
     ],
-    # Frame 1: Moving inward
+    # 1: Still wide
     [
-        r"        \         /        ",
-        r"         \       /         ",
-        r"          \     /          ",
-        r"           \ _ /           ",
-        r"            \ /            ",
-        r"             X             ",
-        r"            / \            ",
-        r"           /   \           ",
-        r"          (     )          ",
-        r"           \___/           ",
-        r"                           ",
-        r"                           ",
-        r"                           ",
+        r"      \                 /      ",
+        r"       \               /       ",
+        r"        \             /        ",
+        r"         \           /         ",
+        r"          \         /          ",
+        r"           \       /           ",
+        r"            \     /            ",
+        r"             \   /             ",
+        r"              (X)              ",
+        r"             /   \             ",
+        r"           /       \           ",
+        r"          ( O ) ( O )          ",
+        r"           \_/   \_/           ",
     ],
-    # Frame 2: Closing fast
+    # 2: Closing inward (Step 1)
     [
-        r"          \     /          ",
-        r"           \   /           ",
-        r"            \ /            ",
-        r"             X             ",
-        r"            / \            ",
-        r"           /   \           ",
-        r"          (     )          ",
-        r"           \___/           ",
-        r"                           ",
-        r"                           ",
-        r"                           ",
-        r"                           ",
-        r"                           ",
+        r"                               ",
+        r"        \             /        ",
+        r"         \           /         ",
+        r"          \         /          ",
+        r"           \       /           ",
+        r"            \     /            ",
+        r"             \   /             ",
+        r"              \ /              ",
+        r"              (X)              ",
+        r"             /   \             ",
+        r"           /       \           ",
+        r"          ( O ) ( O )          ",
+        r"           \_/   \_/           ",
     ],
-    # Frame 3: * SNIP * CLOSED IMPACT
+    # 3: Closing inward (Step 2)
     [
-        r"             |             ",
-        r"             |   .  *  .   ",
-        r"             |  * SNIP! *  ",
-        r"            -X-  *  .  *   ",
-        r"            / \            ",
-        r"           /   \           ",
-        r"          (     )          ",
-        r"           \___/           ",
-        r"                           ",
-        r"                           ",
-        r"                           ",
-        r"                           ",
-        r"                           ",
+        r"                               ",
+        r"                               ",
+        r"          \         /          ",
+        r"           \       /           ",
+        r"            \     /            ",
+        r"             \   /             ",
+        r"              \ /              ",
+        r"               |               ",
+        r"              (X)              ",
+        r"             /   \             ",
+        r"          /         \          ",
+        r"         ( O )   ( O )         ",
+        r"          \_/     \_/          ",
     ],
-    # Frame 4: Sparks flying
+    # 4: SNIP! Closed Impact
     [
-        r"             |    +  .     ",
-        r"             |  . *  +     ",
-        r"            -X-   +  ·     ",
-        r"            / \            ",
-        r"           /   \           ",
-        r"          (     )          ",
-        r"           \___/           ",
-        r"                           ",
-        r"                           ",
-        r"                           ",
-        r"                           ",
-        r"                           ",
-        r"                           ",
+        r"               |               ",
+        r"               |    .  *  .    ",
+        r"               |   * SNIP! *   ",
+        r"               |    *  .  *    ",
+        r"               |               ",
+        r"               |               ",
+        r"               |               ",
+        r"              -X-              ",
+        r"             /   \             ",
+        r"            /     \            ",
+        r"          ( O ) ( O )          ",
+        r"           \_/   \_/           ",
     ],
-    # Frame 5: Re-opening recoil
+    # 5: Sparks linger
     [
-        r"          \     /          ",
-        r"           \   /           ",
-        r"            \ /            ",
-        r"             X     ·       ",
-        r"            / \            ",
-        r"           /   \           ",
-        r"          (     )          ",
-        r"           \___/           ",
-        r"                           ",
-        r"                           ",
-        r"                           ",
-        r"                           ",
-        r"                           ",
+        r"               |               ",
+        r"               |     +  .      ",
+        r"               |   . *  +      ",
+        r"               |     ·  +      ",
+        r"               |               ",
+        r"               |               ",
+        r"               |               ",
+        r"              -X-              ",
+        r"             /   \             ",
+        r"            /     \            ",
+        r"          ( O ) ( O )          ",
+        r"           \_/   \_/           ",
     ],
-    # Frame 6: Half-open
+    # 6: Re-opening (Fast recoil)
     [
-        r"        \         /        ",
-        r"         \       /         ",
-        r"          \  _  /          ",
-        r"           \ / \           ",
-        r"            \ /            ",
-        r"             X             ",
-        r"            / \            ",
-        r"           /   \           ",
-        r"          (     )          ",
-        r"           \___/           ",
-        r"                           ",
-        r"                           ",
-        r"                           ",
+        r"                               ",
+        r"                               ",
+        r"          \         /          ",
+        r"           \       /           ",
+        r"            \     /            ",
+        r"             \   /             ",
+        r"              \ /              ",
+        r"               |               ",
+        r"              (X)              ",
+        r"             /   \             ",
+        r"          /         \          ",
+        r"         ( O )   ( O )         ",
+        r"          \_/     \_/          ",
     ],
-    # Frame 7: Fully open ready
+    # 7: Opening back
     [
-        r"      \             /      ",
-        r"       \           /       ",
-        r"        \    _    /        ",
-        r"         \  / \  /         ",
-        r"          \/   \/          ",
-        r"           \   /           ",
-        r"            \ /            ",
-        r"             X             ",
-        r"            / \            ",
-        r"           /   \           ",
-        r"          (     )          ",
-        r"           \___/           ",
-        r"                           ",
+        r"                               ",
+        r"        \             /        ",
+        r"         \           /         ",
+        r"          \         /          ",
+        r"           \       /           ",
+        r"            \     /            ",
+        r"             \   /             ",
+        r"              \ /              ",
+        r"              (X)              ",
+        r"             /   \             ",
+        r"           /       \           ",
+        r"          ( O ) ( O )          ",
+        r"           \_/   \_/           ",
     ],
 ]
 
 images = []
-num_frames = 16
+num_frames = len(SCISSOR_FRAMES) * 2  # 16 frames for smooth timing
 
 for i in range(num_frames):
     img = Image.new("RGB", (WIDTH, HEIGHT), BG_COLOR)
@@ -161,11 +161,11 @@ for i in range(num_frames):
     # 2. Top Header Bar
     hazard_text = "/// THE PIT // SECTOR 07 // THE CLEANERS // JINKI: THE RIPPER ///"
     draw.text((24, 20), hazard_text, font=font_small, fill=TEXT_MUTED)
-    draw.text((WIDTH - 150, 20), "STATUS: ACTIVE ✂", font=font_small, fill=TEXT_RED)
+    draw.text((WIDTH - 155, 20), "STATUS: ARMED [OK]", font=font_small, fill=TEXT_RED)
     draw.line([(24, 36), (WIDTH - 25, 36)], fill=BORDER_COLOR, width=1)
 
     # 3. Left Column: Scissor Box
-    frame_idx = i % len(SCISSOR_FRAMES)
+    frame_idx = (i // 2) % len(SCISSOR_FRAMES)
     scissor_lines = SCISSOR_FRAMES[frame_idx]
 
     draw.rectangle([24, 46, 250, 252], fill=(10, 12, 17), outline=BORDER_COLOR, width=1)
@@ -173,8 +173,8 @@ for i in range(num_frames):
 
     sy = 74
     for line in scissor_lines:
-        c = TEXT_RED if ("SNIP" in line or "X" in line or "-X-" in line) else TEXT_WHITE
-        draw.text((32, sy), line, font=font_mono, fill=c)
+        c = TEXT_RED if ("SNIP" in line or "-X-" in line or "(X)" in line) else TEXT_WHITE
+        draw.text((31, sy), line, font=font_mono, fill=c)
         sy += 13
 
     # 4. Right Column: Hero Title & Dossier
@@ -209,5 +209,6 @@ for i in range(num_frames):
     images.append(img)
 
 out_gif = os.path.join(os.path.dirname(os.path.dirname(__file__)), "assets", "riyo-banner.gif")
-images[0].save(out_gif, save_all=True, append_images=images[1:], duration=120, loop=0)
-print(f"Generated clean animated ASCII GIF at {out_gif}")
+# 130ms per frame for a punchy, clean snip rhythm
+images[0].save(out_gif, save_all=True, append_images=images[1:], duration=130, loop=0)
+print(f"Generated pixel-perfect symmetrical animated GIF at {out_gif}")
