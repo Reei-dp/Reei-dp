@@ -26,7 +26,7 @@
   <!-- Column 1: Commits -->
   <g transform="translate(36, 68)">
     <text y="0" class="lbl">TOTAL COMMITS</text>
-    <text y="38" class="val" fill="#f0f2f8">12,123</text>
+    <text y="38" class="val" fill="#f0f2f8">11,239</text>
     <text y="58" class="sub" fill="#ff0033">PUBLIC &amp; RESTRICTED</text>
   </g>
 
@@ -36,7 +36,7 @@
   <!-- Column 2: Organizations -->
   <g transform="translate(248, 68)">
     <text y="0" class="lbl">ORGANIZATIONS</text>
-    <text y="38" class="val" fill="#00f5d4">21</text>
+    <text y="38" class="val" fill="#00f5d4">1</text>
     <text y="58" class="sub" fill="#63697e">AFFILIATED BODIES</text>
   </g>
 
@@ -46,8 +46,8 @@
   <!-- Column 3: Total Repositories (Personal + Orgs) -->
   <g transform="translate(444, 68)">
     <text y="0" class="lbl">TOTAL REPOS</text>
-    <text y="38" class="val" fill="#ff0033">187</text>
-    <text y="58" class="sub" fill="#63697e">20 USER • 167 ORGS</text>
+    <text y="38" class="val" fill="#ff0033">11</text>
+    <text y="58" class="sub" fill="#63697e">11 USER • 0 ORGS</text>
   </g>
 
   <!-- Vertical Divider 3 -->
@@ -56,7 +56,7 @@
   <!-- Column 4: Pull Requests -->
   <g transform="translate(656, 68)">
     <text y="0" class="lbl">PULL REQUESTS</text>
-    <text y="38" class="val" fill="#f0f2f8">1,107</text>
+    <text y="38" class="val" fill="#f0f2f8">36</text>
     <text y="58" class="sub" fill="#63697e">REVIEWS &amp; MERGES</text>
   </g>
 </svg>
