@@ -22,7 +22,7 @@ jobs:
 
       - name: Generate Stats Card
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         run: |
           python scripts/generate_stats.py
 

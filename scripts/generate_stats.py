@@ -86,7 +86,7 @@ def generate_svg(stats, output_path):
 
   <!-- Top Status Bar -->
   <text x="36" y="32" class="tag">[TELEMETRY // REEI-DP]</text>
-  <text x="814" y="32" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#4d5366">ALL 21 ORGANIZATIONS &amp; PROJECTS SYNCED</text>
+  <text x="814" y="32" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#4d5366">ALL {stats["orgs"]} ORGANIZATIONS &amp; PROJECTS SYNCED</text>
   <line x1="36" y1="44" x2="814" y2="44" stroke="#181a26" stroke-width="1" />
 
   <!-- 4 Columns Grid with Spacious Padding -->
